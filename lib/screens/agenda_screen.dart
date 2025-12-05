@@ -37,6 +37,10 @@ class _AgendaScreenState extends State<AgendaScreen> {
         title: Text('Agenda'),
         backgroundColor: AppTheme.primaryStart,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(16, 16, 16, 24),

@@ -12,29 +12,14 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Meu Perfil'),
-        backgroundColor: AppTheme.primaryStart,
-        elevation: 0,
-        centerTitle: false,
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Center(
-              child: Icon(Icons.notifications, size: 20),
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Perfil Header
-            Container(
-              color: AppTheme.primaryStart,
-              padding: EdgeInsets.fromLTRB(16, 16, 16, 24),
-              child: Container(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          // Perfil Header
+          Container(
+            color: AppTheme.primaryStart,
+            padding: EdgeInsets.fromLTRB(16, 16, 16, 24),
+            child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
@@ -220,7 +205,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 24),
           ],
         ),
-      ),
     );
   }
 }

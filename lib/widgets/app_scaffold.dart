@@ -17,6 +17,23 @@ class AppScaffold extends StatelessWidget {
     );
   }
 
+  String _getTitleByIndex(int index) {
+    switch (index) {
+      case 0:
+        return 'Dashboard';
+      case 1:
+        return 'Veículos';
+      case 2:
+        return 'Rotas';
+      case 3:
+        return 'Conversas';
+      case 4:
+        return 'Perfil';
+      default:
+        return 'Dashboard';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,13 +47,17 @@ class AppScaffold extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.white.withOpacity(0.2),
-                      child: Icon(Icons.directions_car, color: Colors.white),
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/images/logorotas.jpg',
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     SizedBox(width: 12),
                     Text(
-                      'Dashboard',
+                      _getTitleByIndex(currentIndex),
                       style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Spacer(),

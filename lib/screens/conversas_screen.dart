@@ -27,22 +27,12 @@ class _ConversasScreenState extends State<ConversasScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Conversas'),
-        backgroundColor: AppTheme.primaryStart,
-        elevation: 0,
-        actions: [
-          Padding(padding: EdgeInsets.only(right: 16), child: Center(child: Icon(Icons.notifications, size: 20))),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _SearchBar(controller: searchController),
+          _ConversasList(conversas: conversas),
         ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _SearchBar(controller: searchController),
-            _ConversasList(conversas: conversas),
-          ],
-        ),
       ),
     );
   }
